@@ -11,6 +11,9 @@ tasks::tasks( QObject* parent,QString name,int start,int end,int priority,QStrin
     qDebug()<<get_name();
 
 }
+tasks::~tasks(){
+    qDebug()<<"delete task";
+}
 
 tasks::tasks(QObject* parent,QString name,QString start,QString end,QString priority,QString time,QString isfinished):
 QObject(parent), _name(name),_time(time){

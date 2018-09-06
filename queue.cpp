@@ -3,31 +3,33 @@
 #include <QDebug>
 Queue::Queue(QObject *parent) : QObject(parent)
 {
-   queue=new QQueue<tasks*>();
+   //queue=new QQueue<tasks*>();
    hash=new QHash<QString,tasks*>();
-   queue1= new std::priority_queue<tasks*,std::vector<tasks*>,cmp>();
+   queue= new std::priority_queue<tasks*,std::vector<tasks*>,cmp>();
 }
 
 Queue::~Queue(){
-    QQueue<tasks*>::const_iterator it;
-    for(it=queue->begin();it!=queue->end();it++){
+     //QHash<QString,tasks*>::const_iterator it;
+    for(auto it=hash->begin();it!=hash->end();it++)
         (*it)->deleteLater();
-    }
     hash->clear();
-    delete queue;
+//不允许再次释放已释放的空间
+    while(!queue->empty())
+    {
+        //delete queue->top();
+        queue->pop();
+    }
     delete hash;
-    delete queue1;
+    delete queue;
 
-    //queue1->delete();
-    //queue->delete();
-    //hash->delete();
+
 
 }
 
 void Queue::addTask(tasks *task){
-    queue->enqueue(task);
+   // queue->enqueue(task);
     hash->insert(task->get_name(),task);
-    queue1->push(task);
+    queue->push(task);
 }
 
 tasks* Queue::findByName( QString name){
@@ -43,65 +45,86 @@ tasks* Queue::findByName( QString name){
 
 
 void Queue::deleteAll(){
-    QQueue<tasks*>::const_iterator it;
-    for(it=queue->begin();it!=queue->end();it++){
+
+    for(auto it=hash->begin();it!=hash->end();it++){
         (*it)->deleteLater();
     }
-    queue->clear();
+
     hash->clear();
+    qDebug()<<"delete all hash"<<hash->size();
+    while(!queue->empty())
+    {
+
+        queue->pop();
+    }
+
+    qDebug()<<"delete all queue"<<queue->size();
+
 }
 
 void Queue::deleteOne(QString name){
     tasks* task = findByName(name);
+
     if(task==nullptr)
         return;
-    queue->removeOne(task);
-    hash->remove(name);
 
+    qDebug()<<"before"<<hash->size();
+    qDebug()<<"before"<<queue->size();
+
+
+    hash->remove(name);
+    auto *queue_copy=new std::priority_queue<tasks*,std::vector<tasks*>,cmp>() ;
+
+
+    while(!queue->empty())
+    {
+        tasks* head=queue->top();
+        queue->pop();
+        if(head!=task)
+            queue_copy->push(head);
+    }
+    queue=queue_copy;
+    qDebug()<<"after"<<hash->size();
+    qDebug()<<"after"<<queue->size();
+    //单独释放task,因为hash.remove掉了
+    task->deleteLater();
 
 }
 
+
+
+//队列中pop了，hash表没pop
 tasks* Queue::top(){
     tasks* task=nullptr;
-    if(queue->size()>0)
-        task=queue->dequeue();
+    if(queue->size()>0){
+        task=queue->top();
+        //queue->pop();
 
-    //???? hash->remove()
-     return task;
-
-}
-
-
-tasks* Queue::topByPriority(){
-    tasks* task=nullptr;
-    if(queue1->size()>0){
-        task=queue1->top();
-        queue1->pop();
     }
 
-
-
-    //???? hash->remove()
      return task;
-
 }
 
+
+void Queue::pop(){
+
+    queue->pop();
+}
 
 //设置优先级后重新刷新
 void Queue::refresh(){
 
-    if(queue1->size()<=0)
+    if(queue->size()<=0)
         return;
-    auto *queue1_copy=new std::priority_queue<tasks*,std::vector<tasks*>,cmp>() ;
-    while(!queue1->empty())
+    auto *queue_copy=new std::priority_queue<tasks*,std::vector<tasks*>,cmp>() ;
+    while(!queue->empty())
     {
 
-        qDebug()<<queue1->top()->get_info();
-        queue1_copy->push(queue1->top());
-        queue1->pop();
+        qDebug()<<queue->top()->get_info();
+        queue_copy->push(queue->top());
+        queue->pop();
 
     }
 
-    queue1=queue1_copy;
-
+    queue=queue_copy;
 }

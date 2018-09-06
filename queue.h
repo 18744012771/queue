@@ -18,18 +18,26 @@ class Queue : public QObject
     Q_OBJECT
 public:
     explicit Queue(QObject *parent = 0);
-     void addTask(tasks *task);
-
-    void deleteAll();
-    void deleteOne(QString name);
-    tasks* findByName( QString name);
     ~Queue();
+    //添加任务
+     void addTask(tasks *task);
+    //删除所有任务
+    void deleteAll();
 
-    //bool isEmpty
+    //根据任务名删除特定任务  很恶心
+    void deleteOne(QString name);
+    //根据任务名查找任务
+    tasks* findByName( QString name);
+
+    //任务队列是否空
+    bool isEmpty();
+    //tasks* top();
+    //根据优先级返回任务
     tasks* top();
-    tasks* topByPriority();
-
+    //更改优先级后需要重新刷新队列
     void refresh();
+    //踢出头任务
+    void pop();
 
 
 signals:
@@ -37,9 +45,9 @@ signals:
 public slots:
 
 private:
-    QQueue<tasks*> *queue;
+    //QQueue<tasks*> *queue;
     QHash<QString,tasks*> *hash;
-    std::priority_queue<tasks*,std::vector<tasks*>,cmp> *queue1;
+    std::priority_queue<tasks*,std::vector<tasks*>,cmp> *queue;
 };
 
 #endif // QUEUE_H

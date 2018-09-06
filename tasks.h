@@ -15,6 +15,7 @@ class tasks: public QObject
 
 public:
    // explicit tasks( );
+    ~tasks();
     tasks(QObject *,QString,int,int,int,QString,int);
     tasks(QObject *,QString,QString,QString,QString,QString,QString);
 //    void addtask(tasks );
@@ -36,6 +37,7 @@ private:
     int _priority;
     QString _time;
     int _isfinished;
+   // int s;
 };
 
 #endif // TASKS_H
