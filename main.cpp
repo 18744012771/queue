@@ -34,53 +34,12 @@ int main(int argc, char *argv[])
 //     q->addTask(task3);
 //     qDebug()<<"init:"<<q->top()->get_info();
 
-//     task3->set_priority(4);
-//     q->refresh();
-//     qDebug()<<"task3->set_priority(4):"<<q->top()->get_info();
-//     q->pop();
-//     q->pop();
-//     q->pop();
-     //int a[10];
-
-
-//     q->deleteOne(QString("c"));
-//     qDebug()<<q->top()->get_info();
-
-//     q->deleteAll();
-
-
-    // q->deleteAll();
-
-      //qDebug()<<q->top()->get_info();
 
 
 
 
-//    int *p=new int(4);
-//    int *p1=p;
-//    std::vector<int *> parr;
-//    parr.push_back(p);
 
-//    qDebug()<<p;
 
-//    delete p;
-//    delete p1;
-//    qDebug()<<p;
-//    qDebug()<<parr[0];
-//    p=nullptr;
-//    qDebug()<<p;
-//    qDebug()<<parr[0];
-//    tasks* task5=new  tasks(&w,QString("4"),QString("2"),QString("2"),QString("0"),QString("5"),QString("F"));
-//    qDebug()<<task5<<sizeof(*task5);
-//     //task5->deleteLater();
-//     delete task5;
-//    task5=NULL;
-//     qDebug()<<task5<<sizeof(*task5);
-
-//     double *d=new double(4);
-//     qDebug()<<d<<sizeof(*d);
-//     delete d;
-//      qDebug()<<d<<sizeof(*d);
 
 
      qDebug()<<QTime::currentTime();
