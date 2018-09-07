@@ -39,7 +39,7 @@ public:
     //踢出头任务
     void pop();
 
-
+    void getSize();
 signals:
 
 public slots:
@@ -48,6 +48,7 @@ private:
     //QQueue<tasks*> *queue;
     QHash<QString,tasks*> *hash;
     std::priority_queue<tasks*,std::vector<tasks*>,cmp> *queue;
+    //queue<T,vector<T>,cmp>
 };
 
 #endif // QUEUE_H

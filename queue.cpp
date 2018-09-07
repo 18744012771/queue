@@ -6,8 +6,11 @@ Queue::Queue(QObject *parent) : QObject(parent)
    //queue=new QQueue<tasks*>();
    hash=new QHash<QString,tasks*>();
    queue= new std::priority_queue<tasks*,std::vector<tasks*>,cmp>();
+   qDebug()<<"init";
+   getSize();
 }
 
+//析构函数统一释放内存
 Queue::~Queue(){
      //QHash<QString,tasks*>::const_iterator it;
     for(auto it=hash->begin();it!=hash->end();it++)
@@ -21,16 +24,20 @@ Queue::~Queue(){
     }
     delete hash;
     delete queue;
+    qDebug()<<"~Queue";
+    getSize();
 
 
 
 }
-
+//添加任务
 void Queue::addTask(tasks *task){
    // queue->enqueue(task);
     hash->insert(task->get_name(),task);
     queue->push(task);
 }
+
+
 
 tasks* Queue::findByName( QString name){
 
@@ -58,20 +65,22 @@ void Queue::deleteAll(){
         queue->pop();
     }
 
-    qDebug()<<"delete all queue"<<queue->size();
+    qDebug()<<"delete all queue" ;
+    getSize();
 
 }
 
+//按照任务名删除任务，将hash表和queue中任务删除，同时将任务内存释放
 void Queue::deleteOne(QString name){
     tasks* task = findByName(name);
 
     if(task==nullptr)
         return;
 
-    qDebug()<<"before"<<hash->size();
-    qDebug()<<"before"<<queue->size();
+    qDebug()<<"before";
+    getSize();
 
-
+    //把hash表中数据释放
     hash->remove(name);
     auto *queue_copy=new std::priority_queue<tasks*,std::vector<tasks*>,cmp>() ;
 
@@ -84,8 +93,8 @@ void Queue::deleteOne(QString name){
             queue_copy->push(head);
     }
     queue=queue_copy;
-    qDebug()<<"after"<<hash->size();
-    qDebug()<<"after"<<queue->size();
+    qDebug()<<"after" ;
+    getSize();
     //单独释放task,因为hash.remove掉了
     task->deleteLater();
 
@@ -93,7 +102,7 @@ void Queue::deleteOne(QString name){
 
 
 
-//队列中pop了，hash表没pop
+//返回队列头元素
 tasks* Queue::top(){
     tasks* task=nullptr;
     if(queue->size()>0){
@@ -105,10 +114,16 @@ tasks* Queue::top(){
      return task;
 }
 
-
+//pop时同时将hash表中任务释放
+//实际工作时不能立即释放，应该是扔到任务进行队列
 void Queue::pop(){
-
+    tasks* task =queue->top();
+    QString name=task->get_name();
+    hash->remove(name);
     queue->pop();
+    task->deleteLater();
+    qDebug()<<"pop";
+    getSize();
 }
 
 //设置优先级后重新刷新
@@ -127,4 +142,12 @@ void Queue::refresh(){
     }
 
     queue=queue_copy;
+    qDebug()<<"refresh";
+    getSize();
+}
+
+
+void Queue::getSize(){
+
+    qDebug()<<"hash:"<<hash->size()<<"queue:"<<queue->size();
 }
