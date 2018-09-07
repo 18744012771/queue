@@ -3,11 +3,11 @@
 #include "tasks.h"
 #include <QDebug>
 #include <QVector>
-#include "queue.h"
+#include "priority_queue.h"
 #include <iostream>
 #include <vector>
 #include <queue>
-
+#include <QTime>
 
 
 
@@ -18,34 +18,35 @@ int main(int argc, char *argv[])
     w.show();
 
 
-    tasks *task =new tasks(&w,QString("a"),QString("2"),QString("0"),QString("0"),QString("5"),QString("F"));
-    tasks *task1=new tasks(&w,QString("b"),QString("2"),QString("0"),QString("0"),QString("5"),QString("F"));
-    tasks *task2=new tasks(&w,QString("c"),QString("2"),QString("1"),QString("0"),QString("5"),QString("F"));
-    tasks *task3=new tasks(&w,QString("d"),QString("2"),QString("2"),QString("0"),QString("5"),QString("F"));
-
-//    tasks *task =new tasks(&w,QString("1"),2,3,0,QString("5"),0);
-//    tasks *task1=new tasks(&w,QString("2"),2,3,0,QString("5"),0);
-//    tasks *task2=new tasks(&w,QString("4"),2,3,0,QString("5"),0);
-//    tasks *task3=new tasks(&w,QString("3"),2,3,0,QString("5"),0);
+//    tasks *task =new tasks(&w,QString("a"),QString("2"),QString("0"),QString("0"),QString("5"),QString("F"));
+//    tasks *task1=new tasks(&w,QString("b"),QString("2"),QString("0"),QString("0"),QString("5"),QString("F"));
+//    tasks *task2=new tasks(&w,QString("c"),QString("2"),QString("1"),QString("0"),QString("5"),QString("F"));
+//    tasks *task3=new tasks(&w,QString("d"),QString("2"),QString("2"),QString("0"),QString("5"),QString("F"));
 
 
 
-        Queue *q=new Queue();
-        q->addTask(task);
-        q->addTask(task1);
-        q->addTask(task2);
-        q->addTask(task3);
-     qDebug()<<"init:"<<q->top()->get_info();
 
-     task3->set_priority(4);
-     q->refresh();
-     qDebug()<<"task3->set_priority(4):"<<q->top()->get_info();
-     q->pop();
 
-     q->deleteOne(QString("c"));
-     qDebug()<<q->top()->get_info();
+//     Priority_Queue  *q=new Priority_Queue();
+//     q->addTask(task);
+//     q->addTask(task1);
+//     q->addTask(task2);
+//     q->addTask(task3);
+//     qDebug()<<"init:"<<q->top()->get_info();
 
-      q->deleteAll();
+//     task3->set_priority(4);
+//     q->refresh();
+//     qDebug()<<"task3->set_priority(4):"<<q->top()->get_info();
+//     q->pop();
+//     q->pop();
+//     q->pop();
+     //int a[10];
+
+
+//     q->deleteOne(QString("c"));
+//     qDebug()<<q->top()->get_info();
+
+//     q->deleteAll();
 
 
     // q->deleteAll();
@@ -81,5 +82,7 @@ int main(int argc, char *argv[])
 //     delete d;
 //      qDebug()<<d<<sizeof(*d);
 
+
+     qDebug()<<QTime::currentTime();
     return a.exec();
 }

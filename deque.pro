@@ -15,10 +15,15 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     tasks.cpp \
-    queue.cpp
+    taskmanager.cpp \
+    priority_queue.cpp
 
 HEADERS  += mainwindow.h \
     tasks.h \
-    queue.h
+    taskmanager.h \
+    priority_queue .h \
+    priority_queue .h \
+    priority_queue .h \
+    priority_queue.h
 
 FORMS    += mainwindow.ui

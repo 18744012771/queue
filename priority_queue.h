@@ -12,13 +12,16 @@ struct cmp{
     }
 };
 
+namespace hrzn {
+  class priority_Queue;
 
-class Queue : public QObject
+}
+class Priority_Queue : public QObject
 {
     Q_OBJECT
 public:
-    explicit Queue(QObject *parent = 0);
-    ~Queue();
+    explicit Priority_Queue(QObject *parent = 0);
+    ~Priority_Queue();
     //添加任务
      void addTask(tasks *task);
     //删除所有任务
@@ -36,8 +39,10 @@ public:
     tasks* top();
     //更改优先级后需要重新刷新队列
     void refresh();
-    //踢出头任务
+    //踢出头任务，在这需不需要释放task*，需要修改？
     void pop();
+
+
 
     void getSize();
 signals:
@@ -47,7 +52,10 @@ public slots:
 private:
     //QQueue<tasks*> *queue;
     QHash<QString,tasks*> *hash;
-    std::priority_queue<tasks*,std::vector<tasks*>,cmp> *queue;
+    std::priority_queue<tasks*,std::vector<tasks*>,cmp> *undo_queue;
+//    QQueue<tasks*> *doing_queue;
+//    QQueue<tasks*> *done_queue;
+
     //queue<T,vector<T>,cmp>
 };
 

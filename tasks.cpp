@@ -12,7 +12,7 @@ tasks::tasks( QObject* parent,QString name,int start,int end,int priority,QStrin
 
 }
 tasks::~tasks(){
-    qDebug()<<"delete task";
+    qDebug()<<"delete task"<<_name;
 }
 
 tasks::tasks(QObject* parent,QString name,QString start,QString end,QString priority,QString time,QString isfinished):

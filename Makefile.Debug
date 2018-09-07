@@ -46,21 +46,33 @@ OBJECTS_DIR   = debug
 SOURCES       = main.cpp \
 		mainwindow.cpp \
 		tasks.cpp \
-		queue.cpp debug\moc_mainwindow.cpp \
-		debug\moc_queue.cpp
+		taskmanager.cpp \
+		priority_queue.cpp debug\moc_mainwindow.cpp \
+		debug\moc_taskmanager.cpp \
+		debug\moc_priority_queue.cpp
 OBJECTS       = debug/main.o \
 		debug/mainwindow.o \
 		debug/tasks.o \
-		debug/queue.o \
+		debug/taskmanager.o \
+		debug/priority_queue.o \
 		debug/moc_mainwindow.o \
-		debug/moc_queue.o
+		debug/moc_taskmanager.o \
+		debug/moc_priority_queue.o
 
 DIST          =  mainwindow.h \
 		tasks.h \
-		queue.h main.cpp \
+		taskmanager.h \
+		priority_queue \
+		.h \
+		priority_queue \
+		.h \
+		priority_queue \
+		.h \
+		priority_queue.h main.cpp \
 		mainwindow.cpp \
 		tasks.cpp \
-		queue.cpp
+		taskmanager.cpp \
+		priority_queue.cpp
 QMAKE_TARGET  = deque
 DESTDIR        = debug\ #avoid trailing-slash linebreak
 TARGET         = deque.exe
@@ -83,7 +95,7 @@ dist:
 	$(ZIP) deque.zip $(SOURCES) $(DIST) deque.pro E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\spec_pre.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\qdevice.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\device_config.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\common\angle.conf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\qconfig.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dcore.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dcore_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dinput.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dinput_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dlogic.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dlogic_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dquick.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dquick_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dquickinput.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dquickinput_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dquickrender.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3dquickrender_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3drender.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_3drender_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_axbase.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_axbase_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_axcontainer.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_axcontainer_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_axserver.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_axserver_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_bluetooth.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_bluetooth_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_bootstrap_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_clucene_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_concurrent.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_concurrent_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_core.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_core_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_dbus.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_dbus_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_designer.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_designer_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_designercomponents_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_gui.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_gui_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_help.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_help_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_labscontrols_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_labstemplates_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_location.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_location_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_multimedia.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_multimedia_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_multimediawidgets.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_multimediawidgets_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_network.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_network_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_nfc.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_nfc_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_opengl.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_opengl_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_openglextensions.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_openglextensions_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_platformsupport_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_positioning.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_positioning_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_printsupport.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_printsupport_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_qml.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_qml_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_qmldevtools_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_qmltest.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_qmltest_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_qtmultimediaquicktools_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_quick.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_quick_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_quickparticles_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_quickwidgets.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_quickwidgets_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_script.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_script_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_scripttools.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_scripttools_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_sensors.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_sensors_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_serialbus.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_serialbus_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_serialport.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_serialport_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_sql.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_sql_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_svg.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_svg_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_testlib.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_testlib_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_uiplugin.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_uitools.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_uitools_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_webchannel.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_webchannel_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_websockets.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_websockets_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_widgets.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_widgets_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_winextras.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_winextras_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_xml.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_xml_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_xmlpatterns.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\modules\qt_lib_xmlpatterns_private.pri E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\qt_functions.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\qt_config.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\win32\qt_config.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\win32-g++\qmake.conf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\spec_post.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\exclusive_builds.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\default_pre.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\win32\default_pre.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\resolve_config.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\exclusive_builds_post.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\default_post.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\build_pass.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\qml_debug.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\win32\rtti.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\precompile_header.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\warn_on.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\qt.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\resources.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\moc.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\win32\opengl.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\uic.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\file_copies.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\win32\windows.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\testcase_targets.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\exceptions.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\yacc.prf E:\software\setup\qt5.61\5.6\mingw49_32\mkspecs\features\lex.prf deque.pro E:\software\setup\qt5.61\5.6\mingw49_32\lib\qtmaind.prl E:\software\setup\qt5.61\5.6\mingw49_32\lib\Qt5Widgetsd.prl E:\software\setup\qt5.61\5.6\mingw49_32\lib\Qt5Guid.prl E:\software\setup\qt5.61\5.6\mingw49_32\lib\Qt5Cored.prl  NO_PCH_SOURCES RESOURCES HEADERS SOURCES OBJECTIVE_SOURCES FORMS YACCSOURCES YACCSOURCES LEXSOURCES 
 
 clean: compiler_clean 
-	-$(DEL_FILE) debug\main.o debug\mainwindow.o debug\tasks.o debug\queue.o debug\moc_mainwindow.o debug\moc_queue.o
+	-$(DEL_FILE) debug\main.o debug\mainwindow.o debug\tasks.o debug\taskmanager.o debug\priority_queue.o debug\moc_mainwindow.o debug\moc_taskmanager.o debug\moc_priority_queue.o
 
 distclean: clean 
 	-$(DEL_FILE) $(DESTDIR_TARGET)
@@ -101,9 +113,9 @@ compiler_no_pch_compiler_make_all:
 compiler_no_pch_compiler_clean:
 compiler_rcc_make_all:
 compiler_rcc_clean:
-compiler_moc_header_make_all: debug/moc_mainwindow.cpp debug/moc_queue.cpp
+compiler_moc_header_make_all: debug/moc_mainwindow.cpp debug/moc_taskmanager.cpp debug/moc_priority_queue.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) debug\moc_mainwindow.cpp debug\moc_queue.cpp
+	-$(DEL_FILE) debug\moc_mainwindow.cpp debug\moc_taskmanager.cpp debug\moc_priority_queue.cpp
 debug/moc_mainwindow.cpp: E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QMainWindow \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qmainwindow.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qwidget.h \
@@ -214,7 +226,83 @@ debug/moc_mainwindow.cpp: E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidg
 		mainwindow.h
 	E:\software\setup\qt5.61\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IE:/software/setup/qt5.61/5.6/mingw49_32/mkspecs/win32-g++ -I"D:/Documents/Visual Studio 2013/Projects/day09/deque" -IE:/software/setup/qt5.61/5.6/mingw49_32/include -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtANGLE -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore mainwindow.h -o debug\moc_mainwindow.cpp
 
-debug/moc_queue.cpp: E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+debug/moc_taskmanager.cpp: E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnamespace.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qglobal.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qconfig.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qfeatures.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qsystemdetection.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qprocessordetection.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcompilerdetection.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtypeinfo.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtypetraits.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qisenum.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qsysinfo.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlogging.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qflags.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbasicatomic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_bootstrap.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qgenericatomic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_cxx11.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_gcc.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_msvc.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_armv7.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_armv6.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_armv5.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_ia64.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_x86.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_unix.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qglobalstatic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmutex.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnumeric.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qversiontagging.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstring.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qchar.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearray.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qrefcount.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qarraydata.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringbuilder.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qalgorithms.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiterator.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhashfunctions.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qpair.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearraylist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringlist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qregexp.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringmatcher.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcoreevent.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qscopedpointer.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmetatype.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvarlengtharray.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontainerfwd.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject_impl.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
+		priority_queue.h \
+		tasks.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhash.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QDebug \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qdebug.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmap.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtextstream.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiodevice.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlocale.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvariant.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qshareddata.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvector.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qpoint.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qset.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontiguouscache.h \
+		taskmanager.h
+	E:\software\setup\qt5.61\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IE:/software/setup/qt5.61/5.6/mingw49_32/mkspecs/win32-g++ -I"D:/Documents/Visual Studio 2013/Projects/day09/deque" -IE:/software/setup/qt5.61/5.6/mingw49_32/include -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtANGLE -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore taskmanager.h -o debug\moc_taskmanager.cpp
+
+debug/moc_priority_queue.cpp: E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlist.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qalgorithms.h \
@@ -272,8 +360,10 @@ debug/moc_queue.cpp: E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQue
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvarlengtharray.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontainerfwd.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject_impl.h \
-		queue.h
-	E:\software\setup\qt5.61\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IE:/software/setup/qt5.61/5.6/mingw49_32/mkspecs/win32-g++ -I"D:/Documents/Visual Studio 2013/Projects/day09/deque" -IE:/software/setup/qt5.61/5.6/mingw49_32/include -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtANGLE -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore queue.h -o debug\moc_queue.cpp
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhash.h \
+		priority_queue.h
+	E:\software\setup\qt5.61\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IE:/software/setup/qt5.61/5.6/mingw49_32/mkspecs/win32-g++ -I"D:/Documents/Visual Studio 2013/Projects/day09/deque" -IE:/software/setup/qt5.61/5.6/mingw49_32/include -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtANGLE -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore priority_queue.h -o debug\moc_priority_queue.cpp
 
 compiler_moc_source_make_all:
 compiler_moc_source_clean:
@@ -413,7 +503,11 @@ debug/main.o: main.cpp mainwindow.h \
 		tasks.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QDebug \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QVector
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QVector \
+		priority_queue.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o main.cpp
 
 debug/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -636,11 +730,11 @@ debug/tasks.o: tasks.cpp tasks.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontiguouscache.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\tasks.o tasks.cpp
 
-debug/queue.o: queue.cpp queue.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlist.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qalgorithms.h \
+debug/taskmanager.o: taskmanager.cpp taskmanager.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnamespace.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qglobal.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qconfig.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qfeatures.h \
@@ -670,38 +764,127 @@ debug/queue.o: queue.cpp queue.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmutex.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnumeric.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qversiontagging.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiterator.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstring.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qchar.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearray.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qrefcount.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qarraydata.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringbuilder.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qalgorithms.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiterator.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhashfunctions.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qchar.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qpair.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearraylist.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearray.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnamespace.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstring.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringbuilder.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringlist.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qregexp.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringmatcher.h \
-		tasks.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcoreevent.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qscopedpointer.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmetatype.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvarlengtharray.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontainerfwd.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject_impl.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\queue.o queue.cpp
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject_impl.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
+		priority_queue.h \
+		tasks.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhash.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QDebug \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qdebug.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmap.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtextstream.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiodevice.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlocale.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvariant.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qshareddata.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvector.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qpoint.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qset.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontiguouscache.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\taskmanager.o taskmanager.cpp
+
+debug/priority_queue.o: priority_queue.cpp tasks.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnamespace.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qglobal.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qconfig.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qfeatures.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qsystemdetection.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qprocessordetection.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcompilerdetection.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtypeinfo.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtypetraits.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qisenum.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qsysinfo.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlogging.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qflags.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbasicatomic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_bootstrap.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qgenericatomic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_cxx11.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_gcc.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_msvc.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_armv7.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_armv6.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_armv5.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_ia64.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_x86.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qatomic_unix.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qglobalstatic.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmutex.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnumeric.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qversiontagging.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstring.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qchar.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearray.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qrefcount.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qarraydata.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringbuilder.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qalgorithms.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiterator.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhashfunctions.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qpair.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearraylist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringlist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qregexp.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringmatcher.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcoreevent.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qscopedpointer.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmetatype.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvarlengtharray.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontainerfwd.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject_impl.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QDebug \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qdebug.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhash.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmap.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtextstream.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiodevice.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlocale.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvariant.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qshareddata.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvector.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qpoint.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qset.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontiguouscache.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\priority_queue.o priority_queue.cpp
 
 debug/moc_mainwindow.o: debug/moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_mainwindow.o debug\moc_mainwindow.cpp
 
-debug/moc_queue.o: debug/moc_queue.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_queue.o debug\moc_queue.cpp
+debug/moc_taskmanager.o: debug/moc_taskmanager.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_taskmanager.o debug\moc_taskmanager.cpp
+
+debug/moc_priority_queue.o: debug/moc_priority_queue.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\moc_priority_queue.o debug\moc_priority_queue.cpp
 
 ####### Install
 
