@@ -35,6 +35,8 @@ void MainWindow::on_update_clicked()
     QString priority = ui->updatepriority->text();
     //QTime current= QTime::currentTime();
     tasks *task= queue->findByName(name);
+//    if(task==nullptr)
+//        return;
     if(start!=QString(""))
         task->set_start(start.toInt());
     if(end!=QString(""))
@@ -50,4 +52,5 @@ void MainWindow::on_update_clicked()
 void MainWindow::on_update_2_clicked()
 {
     queue->deleteAll();
+    //while()
 }

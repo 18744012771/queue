@@ -5,10 +5,15 @@
 #include <QObject>
 #include <QHash>
 #include<queue>
+#include <string>
 
 struct cmp{
     bool operator ()(tasks* a, tasks* b){
-        return a->get_priority() < b->get_priority();//最大值优先
+        if(a->get_priority() != b->get_priority())
+             return a->get_priority() < b->get_priority();//最大值优先
+
+        return QString::compare(a->get_time(),b->get_time())>0;
+        //return a->get_time().toStdString()>=b->get_time().toStdString();
     }
 };
 
@@ -43,7 +48,7 @@ public:
     void pop();
 
 
-
+    void popAll();
     void getSize();
 signals:
 

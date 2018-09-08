@@ -223,6 +223,12 @@ release/moc_mainwindow.cpp: E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWi
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qicon.h \
+		priority_queue.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
+		tasks.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash \
 		mainwindow.h
 	E:\software\setup\qt5.61\5.6\mingw49_32\bin\moc.exe $(DEFINES) -D__GNUC__ -DWIN32 -IE:/software/setup/qt5.61/5.6/mingw49_32/mkspecs/win32-g++ -I"D:/Documents/Visual Studio 2013/Projects/day09/deque" -IE:/software/setup/qt5.61/5.6/mingw49_32/include -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtANGLE -IE:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore mainwindow.h -o release\moc_mainwindow.cpp
 
@@ -493,6 +499,12 @@ release/main.o: main.cpp mainwindow.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qicon.h \
+		priority_queue.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
+		tasks.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QApplication \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qapplication.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcoreapplication.h \
@@ -500,14 +512,10 @@ release/main.o: main.cpp mainwindow.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qdesktopwidget.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qguiapplication.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qinputmethod.h \
-		tasks.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QDebug \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QVector \
-		priority_queue.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QTime \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\main.o main.cpp
 
 release/mainwindow.o: mainwindow.cpp mainwindow.h \
@@ -618,6 +626,12 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qtouchdevice.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qtabwidget.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qicon.h \
+		priority_queue.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
+		tasks.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash \
 		ui_mainwindow.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QVariant \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QAction \
@@ -632,6 +646,11 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qinputmethod.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QButtonGroup \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qbuttongroup.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QHBoxLayout \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qboxlayout.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qlayout.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qlayoutitem.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qgridlayout.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QHeaderView \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qheaderview.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qabstractitemview.h \
@@ -649,14 +668,28 @@ release/mainwindow.o: mainwindow.cpp mainwindow.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qstyle.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qtabbar.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qrubberband.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QLabel \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qlabel.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QLineEdit \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qlineedit.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qtextcursor.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qtextformat.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qpen.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtGui/qtextoption.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QMenuBar \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qmenubar.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qmenu.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QPushButton \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qpushbutton.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qabstractbutton.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QStatusBar \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qstatusbar.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QToolBar \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/qtoolbar.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QWidget
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QVBoxLayout \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtWidgets/QWidget \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QTime \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qdatetime.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\mainwindow.o mainwindow.cpp
 
 release/tasks.o: tasks.cpp tasks.h \
@@ -806,11 +839,11 @@ release/taskmanager.o: taskmanager.cpp taskmanager.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontiguouscache.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\taskmanager.o taskmanager.cpp
 
-release/priority_queue.o: priority_queue.cpp tasks.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnamespace.h \
+release/priority_queue.o: priority_queue.cpp priority_queue.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QQueue \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qqueue.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qalgorithms.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qglobal.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qconfig.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qfeatures.h \
@@ -840,31 +873,35 @@ release/priority_queue.o: priority_queue.cpp tasks.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmutex.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnumeric.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qversiontagging.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstring.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qchar.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearray.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiterator.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qrefcount.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qarraydata.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringbuilder.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qlist.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qalgorithms.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiterator.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhashfunctions.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qchar.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qpair.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearraylist.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qbytearray.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qnamespace.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstring.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringbuilder.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringlist.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qregexp.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qstringmatcher.h \
+		tasks.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QObject \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobjectdefs_impl.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcoreevent.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qscopedpointer.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmetatype.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qvarlengtharray.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qcontainerfwd.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qobject_impl.h \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QHash \
+		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhash.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/QDebug \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qdebug.h \
-		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qhash.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qmap.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qtextstream.h \
 		E:/software/setup/qt5.61/5.6/mingw49_32/include/QtCore/qiodevice.h \
